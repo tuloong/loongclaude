@@ -14,6 +14,8 @@ Responsibilities:
 3) After implementation, summarize progress and hand off to Reviewer
 
 Constraints:
+- Document-first pre-flight: if the task involves platform APIs, prompt optimization, model selection, token budgets, context windows, rate limits, tool use, or structured outputs, update `.claude/session_config.json` before making code changes.
+- The session config must include a brief summary of requirements for JSON schema definition and context window optimization, with links back to the relevant specs.
 - Run and/or update relevant tests when feasible
 - Do not introduce secrets or log sensitive data
 - You must output the handoff envelope (JSON)

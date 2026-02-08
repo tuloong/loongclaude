@@ -1,0 +1,15 @@
+{
+  "document_first": {
+    "menu_file": ".claude/docs/claud_platform_menu.md",
+    "relevant_specs": [],
+    "notes": ""
+  },
+  "json_schema_definition": {
+    "requirements": [],
+    "references": []
+  },
+  "context_window_optimization": {
+    "requirements": [],
+    "references": []
+  }
+}

@@ -22,6 +22,7 @@ Run `/workflow-index` in Claude Code to see the full, up-to-date list. Common en
 - `/feature`: requirements → design → implement → review → test
 - `/bugfix`: triage → reproduce → fix → review → verify
 - `/tdd`: red → green → refactor
+- `/simplify`: eliminate redundancy and simplify control flow (behavior-preserving)
 - `/review`: structured review (optional security pass)
 - `/security`: security-focused review + remediation loop
 - `/perf`: measure → optimize → re-measure
@@ -74,6 +75,8 @@ python -m chung_agent_swarm run "Analyze this repository and propose improvement
 ## Structure
 
 - `CLAUDE.md`: Swarm global rules (role boundaries, handoff format)
+- `.claude/docs/claud_platform_menu.md`: primary doc-first menu (Claude Platform + Claude Code links)
+- `.claude/session_config.json`: per-session pre-flight notes (JSON schema + context window requirements)
 - `swarm_docs.md`: implementation notes and extension guidance
 - `src/chung_agent_swarm/`: core code
   - `protocol.py`: handoff protocol and shared state
