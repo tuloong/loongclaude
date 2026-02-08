@@ -15,6 +15,7 @@ List the available project subagents and skills in this repository, and recommen
 - swarm-architect: proposes designs and migration plans (read-only)
 - swarm-debugger: reproduces and fixes failures (edits allowed)
 - swarm-refactorer: behavior-preserving refactors (edits allowed)
+- swarm-simplifier: DRY/KISS code simplifications without behavior change (edits allowed)
 - swarm-security-reviewer: security-focused review (no edits)
 - swarm-performance-optimizer: measure-driven performance work (edits allowed)
 - swarm-docs-writer: updates docs to match behavior (edits allowed)
@@ -35,6 +36,7 @@ List the available project subagents and skills in this repository, and recommen
 - /triage: incident triage playbook
 - /debug: repro → fix → verify
 - /refactor: behavior-preserving refactors
+- /simplify: eliminate redundancy and simplify control flow (behavior-preserving)
 - /deps: safe dependency upgrades
 - /design: requirements → architecture → execution plan
 
