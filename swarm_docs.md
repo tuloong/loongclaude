@@ -1,13 +1,13 @@
-# Claude Agent Swarm Guide v1.0
+# Claude Agent Swarm Guide v2.0
 
 ## 1. Definition
 
-In a Claude Code / Agent SDK workflow, an Agent Swarm can be implemented as a network of specialized roles coordinated by an orchestrator and linked via a handoff protocol that preserves shared state.
+In a Claude Code workflow, an Agent Swarm can be implemented as a network of specialized roles coordinated by a Router and linked via a handoff protocol that preserves continuity.
 
 Core capabilities:
 - Handoffs: one specialist finishes a phase and hands control to the next
 - Parallelization: multiple specialists can be queried in parallel for comparison/verification, then synthesized by Router (or an integrator)
-- Shared state: all roles rely on the same core context and progress state (for example `CLAUDE.md` + `SwarmState`)
+- Shared context: all roles rely on the same project rules and artifacts (for example `CLAUDE.md` + `.claude/session_config.json`)
 
 ## 2. Reference implementation (this repository)
 
@@ -18,17 +18,17 @@ Core capabilities:
   - Reviewer: audits and suggests fixes
   - Tester: verifies with tests and repro steps
 
-### 2.2 Key modules
-- `src/chung_agent_swarm/protocol.py`
-  - `AgentRole`: role enum
-  - `SwarmState`: shared state (goal, turn history, artifacts)
-  - `HandoffEnvelope`: handoff payload (next_role + summary + next_instructions)
-- `src/chung_agent_swarm/orchestrator.py`
-  - `SwarmOrchestrator`: main loop (route → execute → parse handoff → update state)
-  - `run_demo()`: offline demo mode
-  - `run_real()`: real SDK mode (requires ANTHROPIC_API_KEY + claude_agent_sdk)
-- `src/chung_agent_swarm/agents/`
-  - `router.py` `coder.py` `reviewer.py` `tester.py`
+### 2.2 Key artifacts
+- `CLAUDE.md`: global rules (role boundaries, handoff schema, document-first workflow)
+- `.claude/agents/`: Claude Code subagents (Router/Coder/Reviewer/Tester + specialists)
+- `.claude/skills/`: Claude Code skills (including the `/swarm` workflow)
+- `.claude/session_config.json`: per-session pre-flight notes required by the document-first workflow
+
+### 2.3 Key CLI helpers (optional)
+The Python package provides a small CLI to validate workflow artifacts:
+- `chung-swarm check`: verify required files exist
+- `chung-swarm session-config validate`: validate `.claude/session_config.json`
+- `chung-swarm handoff validate`: validate a handoff envelope pasted from output
 
 ### 2.3 Running with Claude Code (project configuration)
 

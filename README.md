@@ -1,8 +1,34 @@
 # chung-agent-swarm
 
-A minimal, runnable “Agent Swarm / Router–Worker” skeleton: Router/Coder/Reviewer/Tester specialists collaborate via a shared handoff protocol.
+A Claude Code–first “Router–Worker” workflow kit:
+
+- Project workflow rules: `CLAUDE.md`
+- Claude Code subagents + skills: `.claude/`
+- A small Python CLI to validate handoffs and session config: `chung-swarm`
 
 ## Quickstart
+
+```bash
+python -m pip install -e ".[dev]"
+```
+
+Verify the repository has the expected Claude Code workflow files:
+
+```bash
+chung-swarm check
+```
+
+Validate the session pre-flight file:
+
+```bash
+chung-swarm session-config validate
+```
+
+Validate a handoff envelope (reads from stdin):
+
+```bash
+chung-swarm handoff validate
+```
 
 ## Run with Claude Code (recommended)
 
@@ -40,48 +66,16 @@ Specialists:
 - swarm-security-reviewer, swarm-performance-optimizer, swarm-docs-writer
 - swarm-release-manager, swarm-incident-triage, swarm-dependency-upgrader
 
-### 1) Install
-
-```bash
-python -m pip install -e ".[dev]"
-```
-
-To enable the real Claude Agent SDK mode (optional):
-
-```bash
-python -m pip install -e ".[dev,agent_sdk]"
-```
-
-### 2) Run demo (offline, no external API calls)
-
-```bash
-python -m chung_agent_swarm demo
-```
-
-### 3) Run real mode (requires API key and SDK)
-
-Set environment variable:
-
-```bash
-setx ANTHROPIC_API_KEY "YOUR_KEY"
-```
-
-Run:
-
-```bash
-python -m chung_agent_swarm run "Analyze this repository and propose improvements."
-```
-
 ## Structure
 
 - `CLAUDE.md`: Swarm global rules (role boundaries, handoff format)
 - `.claude/docs/claud_platform_menu.md`: primary doc-first menu (Claude Platform + Claude Code links)
 - `.claude/session_config.json`: per-session pre-flight notes (JSON schema + context window requirements)
-- `swarm_docs.md`: implementation notes and extension guidance
-- `src/chung_agent_swarm/`: core code
-  - `protocol.py`: handoff protocol and shared state
-  - `agents/`: Router/Coder/Reviewer/Tester
-  - `orchestrator.py`: orchestration loop
+- `swarm_docs.md`: workflow guide and extension guidance
+- `src/chung_agent_swarm/`: CLI helpers
+  - `handoff.py`: handoff schema + parsing/validation
+  - `session_config.py`: session_config validation/template
+  - `project.py`: repository layout checks
 
 ## Handoff protocol
 
@@ -103,5 +97,3 @@ Run tests:
 ```bash
 python -m pytest
 ```
-
-# loongclaude
