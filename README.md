@@ -65,6 +65,7 @@ Specialists:
 - swarm-product, swarm-architect, swarm-debugger, swarm-refactorer
 - swarm-security-reviewer, swarm-performance-optimizer, swarm-docs-writer
 - swarm-release-manager, swarm-incident-triage, swarm-dependency-upgrader
+- swarm-git-worktree-manager
 
 ## Structure
 

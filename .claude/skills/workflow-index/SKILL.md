@@ -22,6 +22,7 @@ List the available project subagents and skills in this repository, and recommen
 - swarm-release-manager: release notes and checklist (read-only)
 - swarm-incident-triage: incident triage and mitigations (may run commands)
 - swarm-dependency-upgrader: safe dependency upgrades (edits allowed)
+- swarm-git-worktree-manager: parallel git workflows using worktrees (may run commands)
 
 ## Skills (slash commands)
 - /swarm: generic Router → Coder → Reviewer → Tester loop
