@@ -49,3 +49,11 @@ The Markdown body becomes the sub-agent’s system prompt.
 - Use read-only agents for investigation so your main session stays focused.
 - Use specialized agents to enforce workflows (for example: review-only, test-only, refactor-only).
 - Use hooks to enforce additional guardrails for a specific agent lifecycle.
+
+## Subagents vs Agent Teams
+
+Subagents and agent teams are complementary patterns:
+- **Subagents**: Work within a single session, report results back to parent. Good for multi-step workflows, research/verification.
+- **Agent teams**: Coordinate across separate sessions, with direct inter-agent communication. Good for sustained parallelism and tasks that exceed your context window.
+
+See [AGENT_TEAMS.md](AGENT_TEAMS.md) for more details on agent teams.

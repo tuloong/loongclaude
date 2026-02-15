@@ -52,6 +52,7 @@ Run `/workflow-index` in Claude Code to see the full, up-to-date list. Common en
 - `/review`: structured review (optional security pass)
 - `/security`: security-focused review + remediation loop
 - `/perf`: measure → optimize → re-measure
+- `/sql-optimize`: SQL optimization based on MySQL index principles (美团技术团队)
 - `/docs`: update documentation to match behavior
 - `/release`: release notes + checklist (no publishing)
 - `/triage`: incident triage playbook
@@ -63,7 +64,7 @@ Core roles:
 
 Specialists:
 - swarm-product, swarm-architect, swarm-debugger, swarm-refactorer
-- swarm-security-reviewer, swarm-performance-optimizer, swarm-docs-writer
+- swarm-security-reviewer, swarm-performance-optimizer, swarm-sql-optimizer, swarm-docs-writer
 - swarm-release-manager, swarm-incident-triage, swarm-dependency-upgrader
 - swarm-git-worktree-manager
 

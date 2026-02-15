@@ -18,6 +18,7 @@ List the available project subagents and skills in this repository, and recommen
 - swarm-simplifier: DRY/KISS code simplifications without behavior change (edits allowed)
 - swarm-security-reviewer: security-focused review (no edits)
 - swarm-performance-optimizer: measure-driven performance work (edits allowed)
+- swarm-sql-optimizer: SQL optimization based on MySQL index principles (edits allowed)
 - swarm-docs-writer: updates docs to match behavior (edits allowed)
 - swarm-release-manager: release notes and checklist (read-only)
 - swarm-incident-triage: incident triage and mitigations (may run commands)
@@ -32,6 +33,7 @@ List the available project subagents and skills in this repository, and recommen
 - /review: structured review (optional security pass)
 - /security: security review + remediation
 - /perf: measure → optimize → re-measure
+- /sql-optimize: SQL optimization based on MySQL index principles (美团技术团队)
 - /docs: update documentation
 - /release: release notes + checklist
 - /triage: incident triage playbook

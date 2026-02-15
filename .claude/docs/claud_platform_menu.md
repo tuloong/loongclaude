@@ -65,6 +65,7 @@ Claude Code local notes:
 - Getting started (Quickstart): https://code.claude.com/docs/en/quickstart
 - Command reference (CLI reference): https://code.claude.com/docs/en/cli-reference
 - Sub-agents: https://code.claude.com/docs/en/sub-agents
+- Agent teams: https://code.claude.com/docs/en/agent-teams
 - Configuration (Settings): https://code.claude.com/docs/en/settings
 - Permissions: https://code.claude.com/docs/en/permissions
 - Hooks: https://code.claude.com/docs/en/hooks
